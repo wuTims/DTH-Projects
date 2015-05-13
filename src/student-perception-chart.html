@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Student perceptions of the campus environment chart</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="sand-theme.js"></script>
+
+    <script>
+        $(function () {
+            $('#bar-chart-individual').highcharts({
+                chart: {
+                    type:'column'
+                },
+                title: {
+                    text:'Student Perceptions of the Campus Environment'
+                },
+                xAxis: {
+                    categories:['1996',
+                                '1998',
+                                '2000',
+                                '2001',
+                                '2003',
+                                '2007','2008','2009','2010','2011','2012']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage of Students ( % )'
+                    },
+                    min: 0,
+                    max: 100,
+                    labels: {
+                        formatter: function(){
+                            return this.value + '%';
+                        }
+                    }
+                },
+                tooltip:{
+                   valueSuffix: '%'
+                },
+                series: [{
+                    name: 'Said the campus has alcohol and drug policies',
+                    data: [96,98,96,92,93,95,95,97,95,94,96]
+                }, {
+                    name: 'Said they do not feel safe on campus',
+                    data: [18,14,10,6,0,4,5,2,3,4,4]
+                }, {
+                    name: 'Said they believe that the social atmosphere on campus promotes alcohol use',
+                    data: [84,77,74,81,77,77,76,72,74,74,66]
+                }, {
+                    name: 'Said the campus has an alcohol and drug prevention program',
+                    data: [39,58,49,47,42,48,42,54,52,52,56]
+                }, {
+                    name:'Said the campus is concerned about the prevention of drug and alcohol use',
+                    data: [73,89,78,76,74,69,72,87,78,76,77]
+                }]
+
+            });
+        });
+
+
+        $(function () {
+            $('#bar-chart-average').highcharts({
+                chart: {
+                    type:'column'
+                },
+                title: {
+                    text:'Student Perceptions of the Campus Environment'
+                },
+                xAxis: {
+                    categories:['Average Student Response from 1996-2012']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage of Students ( % )'
+                    },
+                    min: 0,
+                    max: 100,
+                    labels: {
+                        formatter: function(){
+                            return this.value + '%';
+                        }
+                    }
+                },
+                tooltip:{
+                    valueSuffix: '%'
+                },
+                series: [{
+                    name: 'Said the campus has alcohol and drug policies',
+                    data: [95.18]
+                }, {
+                    name: 'Said they do not feel safe on campus',
+                    data: [6.36]
+                }, {
+                    name: 'Said they believe that the social atmosphere on campus promotes alcohol use',
+                    data: [75.64]
+                }, {
+                    name: 'Said the campus has an alcohol and drug prevention program',
+                    data: [49.00]
+                }, {
+                    name:'Said the campus is concerned about the prevention of drug and alcohol use',
+                    data: [77.18]
+                }]
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id="bar-chart-individual" style="width:100%; height:45%;"></div>
+<div id="bar-chart-average" style="width:100%; height:45%;"></div>
+</body>
+</html>
